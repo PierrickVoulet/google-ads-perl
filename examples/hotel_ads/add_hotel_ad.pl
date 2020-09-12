@@ -84,6 +84,7 @@ sub add_hotel_ad {
   # Create a budget to be used by the campaign that will be created below.
   my $budget_resource_name = add_campaign_budget($api_client, $customer_id);
 
+  # [START ZhYzVkMTc4]
   # Create a hotel campaign.
   my $campaign_resource_name =
     add_hotel_campaign($api_client, $customer_id,
@@ -133,6 +134,7 @@ sub add_campaign_budget {
 }
 
 # Creates a new hotel campaign in the specified client account.
+# [START ViNTgzMDQ2]
 sub add_hotel_campaign {
   my ($api_client, $customer_id, $budget_resource_name,
     $hotel_center_account_id, $cpc_bid_ceiling_micro_amount)
@@ -166,6 +168,7 @@ sub add_hotel_campaign {
         Google::Ads::GoogleAds::V5::Resources::NetworkSettings->new({
           targetGoogleSearch => "true"
         })});
+        # [END ZhYzVkMTc4]
 
   # Create a campaign operation.
   my $campaign_operation =
@@ -182,6 +185,7 @@ sub add_hotel_campaign {
 
   return $campaign_resource_name;
 }
+# [END ViNTgzMDQ2]
 
 # Creates a new hotel ad group in the specified campaign.
 sub add_hotel_ad_group {

@@ -43,6 +43,7 @@ use Cwd qw(abs_path);
 # Running the example with -h will print the command line usage.
 my $customer_id = "INSERT_CUSTOMER_ID_HERE";
 
+# [START cxMmYyMzVm]
 sub get_keyword_stats {
   my ($api_client, $customer_id) = @_;
 
@@ -105,6 +106,7 @@ sub get_keyword_stats {
 
   return 1;
 }
+# [END cxMmYyMzVm]
 
 # Don't run the example if the file is being included.
 if (abs_path($0) ne abs_path(__FILE__)) {

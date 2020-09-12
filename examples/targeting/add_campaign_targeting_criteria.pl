@@ -119,6 +119,7 @@ sub create_negative_keyword_campaign_criterion_operation {
 }
 
 # Creates a campaign criterion operation using the specified location ID.
+# [START FjYjAxNWY5]
 sub create_location_campaign_criterion_operation {
   my ($location_id, $campaign_resource_name) = @_;
 
@@ -145,9 +146,11 @@ sub create_location_campaign_criterion_operation {
       create => $campaign_criterion
     });
 }
+# [END FjYjAxNWY5]
 
 # Creates a campaign criterion operation for the area around a specific
 # address (proximity).
+# [START M2ZmQ2Zjdm]
 sub create_proximity_campaign_criterion_operation {
   my ($campaign_resource_name) = @_;
 
@@ -176,6 +179,7 @@ sub create_proximity_campaign_criterion_operation {
       create => $campaign_criterion
     });
 }
+# [END M2ZmQ2Zjdm]
 
 # Don't run the example if the file is being included.
 if (abs_path($0) ne abs_path(__FILE__)) {

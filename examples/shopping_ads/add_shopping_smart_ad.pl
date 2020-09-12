@@ -157,6 +157,7 @@ sub add_smart_shopping_campaign {
     = @_;
 
   # Create a smart shopping campaign.
+  # [START NkMzU3NzBm]
   my $campaign = Google::Ads::GoogleAds::V5::Resources::Campaign->new({
       name => "Interplanetary Cruise Campaign #" . uniqid(),
       # Configure settings related to shopping campaigns including advertising
@@ -191,6 +192,7 @@ sub add_smart_shopping_campaign {
       # Set the budget.
       campaignBudget => $budget_resource_name
     });
+    # [END NkMzU3NzBm]
 
   # Create a campaign operation.
   my $campaign_operation =

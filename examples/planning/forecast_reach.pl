@@ -98,6 +98,7 @@ sub show_plannable_locations {
 }
 
 # Lists plannable products for a given location.
+# [START A0NDc4OWFk]
 sub show_plannable_products {
   my ($reach_plan_service, $location_id) = @_;
 
@@ -122,8 +123,10 @@ sub show_plannable_products {
     }
   }
 }
+# [END A0NDc4OWFk]
 
 # Pulls a forecast for a budget split 15% and 85% between two products.
+# [START k2MGMyOWZk]
 sub forecast_manual_mix {
   my (
     $reach_plan_service, $customer_id, $location_id,
@@ -156,10 +159,12 @@ sub forecast_manual_mix {
 
   pull_reach_curve($reach_plan_service, $reach_request);
 }
+# [END k2MGMyOWZk]
 
 # Pulls a forecast for a product mix suggested based on preferences for whether
 # the ad would have a guaranteed price, play with sound, would be skippable, would
 # include top content, and a desired ad length.
+# [START c2ZWE3YzI1]
 sub forecast_suggested_mix {
   my (
     $reach_plan_service, $customer_id, $location_id,
@@ -199,6 +204,7 @@ sub forecast_suggested_mix {
 
   pull_reach_curve($reach_plan_service, $reach_request);
 }
+# [END c2ZWE3YzI1]
 
 # Create a base request to generate a reach forecast.
 sub build_reach_request {
@@ -257,6 +263,7 @@ sub build_reach_request {
 }
 
 # Pulls and prints the reach curve for the given request.
+# [START NmZGI4MzNi]
 sub pull_reach_curve {
   my ($reach_plan_service, $reach_request) = @_;
 
@@ -276,6 +283,7 @@ sub pull_reach_curve {
     print "]'\n";
   }
 }
+# [END NmZGI4MzNi]
 
 # Don't run the example if the file is being included.
 if (abs_path($0) ne abs_path(__FILE__)) {

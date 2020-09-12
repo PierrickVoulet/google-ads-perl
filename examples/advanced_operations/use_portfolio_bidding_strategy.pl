@@ -80,6 +80,7 @@ sub use_portfolio_bidding_strategy {
 }
 
 # Creates the portfolio bidding strategy.
+# [START IwZmNlMzNi]
 sub create_bidding_strategy {
   my ($api_client, $customer_id) = @_;
 
@@ -114,8 +115,10 @@ sub create_bidding_strategy {
 
   return $bidding_strategy_resource_name;
 }
+# [END IwZmNlMzNi]
 
 # Creates an explicitly shared budget to be used to create the campaign.
+# [START JiNzA2YTE2]
 sub create_shared_campaign_buget {
   my ($api_client, $customer_id) = @_;
 
@@ -148,6 +151,7 @@ sub create_shared_campaign_buget {
 
   return $campaign_budget_resource_name;
 }
+# [END JiNzA2YTE2]
 
 # Creates a campaign with the created portfolio bidding strategy.
 sub create_campaign_with_bidding_strategy {
@@ -157,6 +161,7 @@ sub create_campaign_with_bidding_strategy {
     $campaign_budget_resource_name
   ) = @_;
 
+  # [START I2NTBjM2Fj]
   # Create a search campaign.
   my $campaign = Google::Ads::GoogleAds::V5::Resources::Campaign->new({
       name                   => "Interplanetary Cruise #" . uniqid(),
@@ -177,6 +182,7 @@ sub create_campaign_with_bidding_strategy {
       biddingStrategy => $bidding_strategy_resource_name,
       campaignBudget  => $campaign_budget_resource_name
     });
+    # [END I2NTBjM2Fj]
 
   # Create a campaign operation.
   my $campaign_operation =
